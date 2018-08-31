@@ -7,4 +7,4 @@ authors = ["James Nugent <james@jen20.com>"]
 slog = "2.3.3"
 slog-async = "^2"
 slog-term = "^2"
-slog-bunyan = "2.1.0"
+slog-bunyan = { git = "https://github.com/jen20/bunyan", branch = "windows-hostname" }
