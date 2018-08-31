@@ -1,0 +1,10 @@
+[package]
+name = "slogtest"
+version = "0.1.0"
+authors = ["James Nugent <james@jen20.com>"]
+
+[dependencies]
+slog = "2.3.3"
+slog-async = "^2"
+slog-term = "^2"
+slog-bunyan = "2.1.0"
