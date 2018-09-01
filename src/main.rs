@@ -1,12 +1,12 @@
 #[macro_use]
 extern crate slog;
-extern crate slog_term;
 extern crate slog_async;
 extern crate slog_bunyan;
+extern crate slog_term;
 
 use slog::*;
-use std::sync::Mutex;
 use std::fs::File;
+use std::sync::Mutex;
 
 pub fn simulate_server(log: Logger) {
     let server = log.new(o!("host" => "localhost", "port" => "8080"));
@@ -44,9 +44,10 @@ fn main() {
     let logger = slog::Logger::root(
         Duplicate::new(
             LevelFilter::new(term, Level::Debug),
-            LevelFilter::new(file, Level::Warning))
-            .fuse(),
-        o!("version" => "0.5", "foo" => "bar"));
+            LevelFilter::new(file, Level::Warning),
+        ).fuse(),
+        o!("version" => "0.5", "foo" => "bar"),
+    );
 
     simulate_server(logger);
 }
